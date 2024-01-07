@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/criarGrupo"
+        android:title="Novo grupo"
+        app:showAsAction="never"
+        ></item>
+
+
+    <item
+        android:title="Nova transmissão"
+        app:showAsAction="never"></item>
+
+
+
+    <item
+        android:title="Aparelhos conectados"
+        app:showAsAction="never"></item>
+
+    
+
+
+
+    <item
+        android:id="@+id/configuracao"
+        app:showAsAction="never"
+        android:title="Configuração">
+        <menu>
+
+            <item
+                android:id="@+id/sair"
+                android:title="Sair"
+                android:orderInCategory="2"></item>
+            <item
+                android:id="@+id/perfil"
+                android:title="Editar conta"
+                android:orderInCategory="1"></item>
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/procurar"
+        android:title="procurar"
+        android:icon="@drawable/lupa"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+</menu>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable-v24/editorVerde.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable-v24/editor_verde.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/balao_branco.xml" value="0.216" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/balao_verde.xml" value="0.216" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/botaoinicial.xml" value="0.72" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/camera.xml" value="0.175" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/camera2.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/chamada.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/check_envio.xml" value="0.1835" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/editor.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/editor_verde.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/emoji_teclado.xml" value="0.2005" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/fundo_chat_text.xml" value="0.2385" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/galeria_foreground.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/gravar.xml" value="0.2005" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.175" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/icon_visualizacao.xml" value="0.2005" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/layer_whats.xml" value="0.2005" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/send_toglle.xml" value="0.2005" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/seta.xml" value="0.21" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/status_adicionar.xml" value="0.2005" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/drawable/toque.xml" value="0.1" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_aplicacao.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_cadastrar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_chat.xml" value="0.4" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_configuracao.xml" value="0.264" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_contato.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_grupo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_grupo_selecionado.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/chatEnviarImagem.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/content_grupo_selecionado.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/divider.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/emoji.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/emoji_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/fragment_camera.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/fragment_chamadas.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/fragment_contato.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/fragment_conversa.xml" value="0.264" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/fragment_fab.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/fragment_status.xml" value="0.264" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/layout_editar_status.xml" value="0.264" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/layout_enviar_imagem.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/layout_vizualizar.xml" value="0.4930555555555556" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/layout_vizualizarDialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/layout_vizualizar_dialog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/recycler_chat_destinatario.xml" value="0.264" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/recycler_chat_remetente.xml" value="0.264" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/recycler_grupo_selecionado.xml" value="0.8" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/layout/recyclerview.xml" value="0.4" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/mipmap-anydpi-v26/camera2.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/mipmap-anydpi-v26/galeria.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.182" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.124" />
+        <entry key="..\:/Users/GILMAR/AndroidStudioProjects/WhatsApp/app/src/main/res/mipmap-hdpi/ic_launcher.xml" value="0.124" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Embedded JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

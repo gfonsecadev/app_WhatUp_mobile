@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragmentos.StatusFragment">
+
+    <include layout="@layout/layout_enviar_imagem"></include>
+    <include layout="@layout/layout_editar_status"></include>
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+
+                android:id="@+id/circleImageView2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/padrao"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/status_adicionar"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageView2"
+                app:layout_constraintEnd_toEndOf="@+id/circleImageView2"></ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meu status"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="20sp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@android:color/darker_gray"
+                android:text="Toque para atualizar seu status"></TextView>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Atualizações recentes"></TextView>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabEditarStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="37dp"
+            android:layout_marginBottom="125dp"
+            android:backgroundTint="@android:color/darker_gray"
+            android:clickable="true"
+            android:src="@drawable/editor"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCameraStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="chamar_contatos"
+            android:backgroundTint="@color/colorPrimary"
+            android:clickable="true"
+            android:layout_marginBottom="64dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/camera"
+            android:layout_gravity="bottom|end" />
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

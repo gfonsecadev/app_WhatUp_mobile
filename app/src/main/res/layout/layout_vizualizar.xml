@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/layoutVizualizar"
+    android:background="@color/black"
+    android:layout_height="match_parent">
+
+
+
+
+    <include layout="@layout/layout_enviar_imagem"></include>
+    <include layout="@layout/layout_editar_status"></include>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarVizualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="200dp">
+
+                <ProgressBar
+                    android:id="@+id/progressStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:background="@color/black"
+                    android:progressTint="@color/white"
+                    android:visibility="gone"
+                    ></ProgressBar>
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageStatusToolBar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    android:visibility="gone"
+                    android:layout_gravity="start"
+                    ></de.hdodenhof.circleimageview.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textStatusNome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/textStatusHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textStatusPersonalizado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="40sp"/>
+
+        |
+
+        <ImageView
+            android:id="@+id/imageLayoutVizualizar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/textStatus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:layout_marginBottom="55dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

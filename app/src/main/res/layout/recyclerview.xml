@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutContatos"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@drawable/toque"
+    >
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imagem_contatoR"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/padrao"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/feito"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/check"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_weight="1"
+        android:gravity="center|start"
+        android:paddingStart="10dp">
+
+        <TextView
+            android:id="@+id/textNomeR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Nome"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/textEmailR"
+            android:layout_width="wrap_content"
+            android:textSize="10dp"
+            android:layout_height="wrap_content"
+            android:text="contato"
+            ></TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/iconVizualizado"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="5"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:background="@drawable/icon_visualizacao"></TextView>
+</LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <include layout="@layout/divider"></include>
+
+
+</LinearLayout>

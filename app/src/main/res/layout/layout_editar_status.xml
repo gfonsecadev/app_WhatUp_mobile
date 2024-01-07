@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutStatusPersonalizar"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:visibility="gone"
+    android:layout_height="match_parent">
+
+
+
+    <EditText
+        android:id="@+id/textDigiteSeuStatus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:hint="Digite seu status"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        ></EditText>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/buttonEmojiStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/emoji_status"></ImageView>
+
+        <ImageView
+            android:id="@+id/buttonStyleStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/icon_text_style"></ImageView>
+
+        <ImageView
+            android:id="@+id/buttonPaletaStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/icon_paleta"></ImageView>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabStausPersonalizarEnviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/send"
+            android:visibility="invisible"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/layoutChat"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChatActivity"
+    android:orientation="vertical"
+    android:background="@drawable/bg_chat"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagemChat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/padrao"></de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/nomeChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Gilmar Alberto"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/white"></TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <include layout="@layout/layout_enviar_imagem"></include>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:paddingBottom="5dp"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:elevation="5dp"
+            android:background="@drawable/fundo_chat_text"
+
+            >
+
+            <ToggleButton
+                android:id="@+id/btEmoji"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/emoji_teclado"
+                android:textOff=" "
+                android:textOn=""
+                tools:ignore="TouchTargetSizeCheck"></ToggleButton>
+
+            <EditText
+                android:id="@+id/text_send_principal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:hint="Mensagem"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="TouchTargetSizeCheck"></EditText>
+
+            <ImageView
+                android:id="@+id/camera_send"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="enviar_imagem"
+                android:src="@drawable/camera_cinza"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></ImageView>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabsend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/send_toglle"
+            app:fabSize="mini"
+
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </LinearLayout>
+</LinearLayout>
