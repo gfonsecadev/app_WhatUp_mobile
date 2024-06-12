@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -17,47 +16,47 @@ import com.example.whatsapp.entidades.Mensagens;
 
 public class MostrarFoto {
 
-    public static void mostrar_foto(Conversas conversas, Context context){
-        String foto="";
-        if(conversas.getIsGrupo().equals("true")){
-            foto=conversas.getGrupo().getFotoGrupo();
-        }else foto=conversas.getUsuarioConversa().getFoto();
+    public static void mostrar_foto(Conversas conversas, Context context) {
+        String foto = "";
+        if (conversas.getIsGrupo().equals("true")) {
+            foto = conversas.getGrupo().getFotoGrupo();
+        } else foto = conversas.getUsuarioConversa().getFoto();
 
-        LayoutInflater layoutInflater=LayoutInflater.from(context);
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
         ImageView view;
-        view= (ImageView) layoutInflater.inflate(R.layout.layout_vizualizar_dialog,null);
-        LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(600, 600);
+        view = (ImageView) layoutInflater.inflate(R.layout.layout_vizualizar_dialog, null);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(600, 600);
         view.setLayoutParams(layoutParams);
-        if(!foto.equals("")){
+        if (!foto.equals("")) {
             Glide.with(context).load(foto).into(view);
         }
 
-        Dialog dialog=new Dialog(context);
-        dialog.addContentView(view,layoutParams);
+        Dialog dialog = new Dialog(context);
+        dialog.addContentView(view, layoutParams);
         dialog.create();
         dialog.show();
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 Intent intent=new Intent(context, VizualizarActivity.class);
-                 intent.putExtra("contato",conversas);
-                 context.startActivity(intent);
+                Intent intent = new Intent(context, VizualizarActivity.class);
+                intent.putExtra("contato", conversas);
+                context.startActivity(intent);
             }
         });
     }
 
-    public static void mostrar_imagem(Mensagens mensagens,Context context){
-        String foto="";
-        if(!mensagens.getImagem().equals("")){
-            foto=mensagens.getImagem();
-            LayoutInflater layoutInflater=LayoutInflater.from(context);
+    public static void mostrar_imagem(Mensagens mensagens, Context context) {
+        String foto = "";
+        if (!mensagens.getImagem().equals("")) {
+            foto = mensagens.getImagem();
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
             ImageView view;
-            view= (ImageView) layoutInflater.inflate(R.layout.layout_vizualizar_dialog,null);
-            LinearLayout.LayoutParams layoutParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            view = (ImageView) layoutInflater.inflate(R.layout.layout_vizualizar_dialog, null);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             view.setLayoutParams(layoutParams);
             Glide.with(context).load(foto).into(view);
-            Dialog dialog=new Dialog(context);
-            dialog.addContentView(view,layoutParams);
+            Dialog dialog = new Dialog(context);
+            dialog.addContentView(view, layoutParams);
 
 
             dialog.create();

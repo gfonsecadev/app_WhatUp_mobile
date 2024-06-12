@@ -12,14 +12,12 @@
     >
 
 
-
-
     <ImageView
         android:id="@+id/imagemEnviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/padrao"
-        android:layout_weight="1"></ImageView>
+        android:layout_weight="1" />
 
 
     <LinearLayout
@@ -56,12 +54,11 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/black"
                 android:background="@color/white"
-                android:layout_weight="1"></EditText>
+                android:layout_weight="1" />
 
 
 
         </LinearLayout>
-
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -70,8 +67,7 @@
             android:layout_height="wrap_content"
             app:fabSize="mini"
             android:src="@drawable/send"
-            android:backgroundTint="@color/colorPrimary"
-           ></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            android:backgroundTint="@color/colorPrimary" />
 
     </LinearLayout>
 </LinearLayout>

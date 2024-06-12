@@ -1,35 +1,11 @@
 package com.example.whatsapp.entidades;
 
-import androidx.annotation.NonNull;
-
 import com.example.whatsapp.ferramentas.firebase;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Exclude;
-import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 
-public class Conversas implements Comparable<Conversas> ,Serializable{
-
-
-
-
-    public Conversas()  {
-       this.isGrupo="false";
-       this.visualizado="false";
-       this.conversaNaoLida=0;
-    }
-
-    public void salvarConversas(){
-
-        DatabaseReference conversasRef = firebase.databaseInstance();
-        conversasRef.child("Conversas").child(this.idUsuarioRemetente)
-                .child(this.idUsuarioDestinatario).setValue(this);
-
-
-    }
+public class Conversas implements Comparable<Conversas>, Serializable {
 
 
     private String idUsuarioRemetente;
@@ -41,6 +17,20 @@ public class Conversas implements Comparable<Conversas> ,Serializable{
     private int conversaNaoLida;
     private Usuario usuarioConversa;
     private Grupo grupo;
+    public Conversas() {
+        this.isGrupo = "false";
+        this.visualizado = "false";
+        this.conversaNaoLida = 0;
+    }
+
+    public void salvarConversas() {
+
+        DatabaseReference conversasRef = firebase.databaseInstance();
+        conversasRef.child("Conversas").child(this.idUsuarioRemetente)
+                .child(this.idUsuarioDestinatario).setValue(this);
+
+
+    }
 
     public int getConversaNaoLida() {
         return conversaNaoLida;
@@ -70,6 +60,10 @@ public class Conversas implements Comparable<Conversas> ,Serializable{
         return idUsuarioRemetente;
     }
 
+    public void setIdUsuarioRemetente(String idUsuarioRemetente) {
+        this.idUsuarioRemetente = idUsuarioRemetente;
+    }
+
     public String getIsGrupo() {
         return isGrupo;
     }
@@ -84,10 +78,6 @@ public class Conversas implements Comparable<Conversas> ,Serializable{
 
     public void setGrupo(Grupo grupo) {
         this.grupo = grupo;
-    }
-
-    public void setIdUsuarioRemetente(String idUsuarioRemetente) {
-        this.idUsuarioRemetente = idUsuarioRemetente;
     }
 
     public String getIdUsuarioDestinatario() {
@@ -117,7 +107,7 @@ public class Conversas implements Comparable<Conversas> ,Serializable{
     @Override
     public int compareTo(Conversas o) {
 
-            return o.getHora().compareTo(getHora());
+        return o.getHora().compareTo(getHora());
 
 
     }

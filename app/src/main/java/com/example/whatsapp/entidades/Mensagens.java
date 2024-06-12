@@ -1,23 +1,41 @@
 package com.example.whatsapp.entidades;
 
 
-
 import com.example.whatsapp.ferramentas.firebase;
 import com.google.firebase.database.DatabaseReference;
 
 public class Mensagens {
-    private String idUsuario,Imagem,texto,nome,horaEnvio;
-    private String destinatario,isGrupo,email;
+    private String idUsuario, Imagem, texto, nome, horaEnvio;
+    private String destinatario, isGrupo, email;
 
     public Mensagens() {
+    }
+
+    public Mensagens(String idDestinatario) {
+        destinatario = idDestinatario;
+        this.setIsGrupo("false");
+        this.setEmail("");
+        this.setImagem("");
+        this.setIdUsuario("");
+        this.setNome("");
+        this.setTexto("");
+        this.setHoraEnvio("");
     }
 
     public String getIsGrupo() {
         return isGrupo;
     }
 
+    public void setIsGrupo(String isGrupo) {
+        this.isGrupo = isGrupo;
+    }
+
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getHoraEnvio() {
@@ -28,14 +46,6 @@ public class Mensagens {
         this.horaEnvio = horaEnvio;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setIsGrupo(String isGrupo) {
-        this.isGrupo = isGrupo;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -44,25 +54,11 @@ public class Mensagens {
         this.email = email;
     }
 
-    public Mensagens(String idDestinatario) {
-        destinatario=idDestinatario;
-        this.setIsGrupo("false");
-        this.setEmail("");
-        this.setImagem("");
-        this.setIdUsuario("");
-        this.setNome("");
-        this.setTexto("");
-        this.setHoraEnvio("");
-    }
-
-
-    public void salvar_mensagens_grupo(String remetente){
-        DatabaseReference databaseReference= firebase.databaseInstance();
+    public void salvar_mensagens_grupo(String remetente) {
+        DatabaseReference databaseReference = firebase.databaseInstance();
         databaseReference.child("Mensagens").child(remetente)
                 .child(destinatario).push().setValue(this);
     }
-
-
 
 
     public String getIdUsuario() {

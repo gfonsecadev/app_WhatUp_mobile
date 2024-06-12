@@ -7,9 +7,9 @@
     android:orientation="vertical"
     tools:context=".fragmentos.StatusFragment">
 
-    <include layout="@layout/layout_enviar_imagem"></include>
-    <include layout="@layout/layout_editar_status"></include>
+    <include layout="@layout/layout_enviar_imagem" />
 
+    <include layout="@layout/layout_editar_status" />
 
 
     <LinearLayout
@@ -35,7 +35,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></de.hdodenhof.circleimageview.CircleImageView>
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <ImageView
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/status_adicionar"
                 app:layout_constraintBottom_toBottomOf="@+id/circleImageView2"
-                app:layout_constraintEnd_toEndOf="@+id/circleImageView2"></ImageView>
+                app:layout_constraintEnd_toEndOf="@+id/circleImageView2" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -55,31 +55,30 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Meu status"
                 android:layout_marginTop="5dp"
-                android:textStyle="bold"
-                android:textSize="20sp"></TextView>
+                android:text="Meu status"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:textColor="@android:color/darker_gray"
-                android:text="Toque para atualizar seu status"></TextView>
+                android:text="Toque para atualizar seu status"
+                android:textColor="@android:color/darker_gray" />
 
         </LinearLayout>
 
 
-
-
     </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:text="Atualizações recentes"></TextView>
+        android:layout_marginBottom="10dp"
+        android:text="Atualizações recentes" />
 
 
     <FrameLayout
@@ -90,8 +89,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerStatus"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            ></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabEditarStatus"
@@ -105,20 +103,8 @@
             android:src="@drawable/editor"
             app:fabSize="mini" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabCameraStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="chamar_contatos"
-            android:backgroundTint="@color/colorPrimary"
-            android:clickable="true"
-            android:layout_marginBottom="64dp"
-            android:layout_marginEnd="30dp"
-            android:src="@drawable/camera"
-            android:layout_gravity="bottom|end" />
+
     </FrameLayout>
-
-
 
 
 </LinearLayout>

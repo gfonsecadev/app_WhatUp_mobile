@@ -1,11 +1,9 @@
 package com.example.whatsapp.entidades;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 
 import com.example.whatsapp.activity.ChatActivity;
-import com.example.whatsapp.activity.GrupoSelecionadoActivity;
 import com.example.whatsapp.ferramentas.Base64Custon;
 import com.example.whatsapp.ferramentas.firebase;
 import com.google.firebase.database.DatabaseReference;
@@ -24,31 +22,30 @@ public class Grupo implements Serializable {
         setFotoGrupo("");
     }
 
-    public void salvarGrupo(Activity context){
-        DatabaseReference databaseReference= firebase.databaseInstance();
-        DatabaseReference grupoRef=databaseReference.child("Grupos");
+    public void salvarGrupo(Activity context) {
+        DatabaseReference databaseReference = firebase.databaseInstance();
+        DatabaseReference grupoRef = databaseReference.child("Grupos");
         grupoRef.child(getIdGrupo()).setValue(this);
-        Conversas conversas=new Conversas();
-        Intent intent=new Intent(context, ChatActivity.class);
+        Conversas conversas = new Conversas();
+        Intent intent = new Intent(context, ChatActivity.class);
 
 
         for (Usuario usuarioConversa : membrosGrupo) {
-            Long hora=System.currentTimeMillis();
+            Long hora = System.currentTimeMillis();
             conversas.setIdUsuarioDestinatario(getIdGrupo());
             conversas.setIdUsuarioRemetente(Base64Custon.criptografar(usuarioConversa.getEmail()));
             conversas.setIsGrupo("true");
             conversas.setGrupo(this);
             conversas.setHora(hora);
             conversas.salvarConversas();
-            if(usuarioConversa.getEmail().equals(firebase.recuperar_emailUsuario())){
-                intent.putExtra("grupo",conversas);
+            if (usuarioConversa.getEmail().equals(firebase.recuperar_emailUsuario())) {
+                intent.putExtra("grupo", conversas);
             }
         }
-       context.startActivity(intent);
-       context.finish();
+        context.startActivity(intent);
+        context.finish();
 
     }
-
 
 
     public String getIdGrupo() {

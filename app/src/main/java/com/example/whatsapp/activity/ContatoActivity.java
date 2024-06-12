@@ -1,11 +1,11 @@
 package com.example.whatsapp.activity;
 
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.example.whatsapp.R;
 import com.example.whatsapp.entidades.Usuario;
@@ -16,14 +16,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-import java.sql.DatabaseMetaData;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContatoActivity extends AppCompatActivity {
     private RecyclerView recyclerViewContatos;
     private AdapterContatos adapterContatos;
-    private List<Usuario> listContatos=new ArrayList<>();
+    private final List<Usuario> listContatos = new ArrayList<>();
     private ValueEventListener eventListener;
     private DatabaseReference usuarioRef;
 
@@ -34,11 +33,11 @@ public class ContatoActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Contatos");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        recyclerViewContatos=findViewById(R.id.recyclerContatos);
+        recyclerViewContatos = findViewById(R.id.recyclerContatos);
 
-        adapterContatos=new AdapterContatos(listContatos,ContatoActivity.this);
+        adapterContatos = new AdapterContatos(listContatos, ContatoActivity.this);
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerViewContatos.setLayoutManager(linearLayoutManager);
         recyclerViewContatos.setHasFixedSize(true);
         recyclerViewContatos.setAdapter(adapterContatos);
@@ -46,26 +45,26 @@ public class ContatoActivity extends AppCompatActivity {
 
     }
 
-    public void ListContatos(){
-        DatabaseReference databaseReference= firebase.databaseInstance();
-        usuarioRef=databaseReference.child("Usuarios");
+    public void ListContatos() {
+        DatabaseReference databaseReference = firebase.databaseInstance();
+        usuarioRef = databaseReference.child("Usuarios");
 
-        eventListener= usuarioRef.addValueEventListener(new ValueEventListener() {
+        eventListener = usuarioRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listContatos.clear();
-                Usuario usuario=new Usuario();
+                Usuario usuario = new Usuario();
                 usuario.setNome("Novo grupo");
                 usuario.setEmail("");
                 usuario.setFoto("");
                 listContatos.add(usuario);
-                for (DataSnapshot dados:snapshot.getChildren()) {
-                    usuario=dados.getValue(Usuario.class);
+                for (DataSnapshot dados : snapshot.getChildren()) {
+                    usuario = dados.getValue(Usuario.class);
 
-                  if(!firebase.recuperar_emailUsuario().equals(usuario.getEmail())) {
+                    if (!firebase.recuperar_emailUsuario().equals(usuario.getEmail())) {
 
-                      listContatos.add(usuario);
-                  }
+                        listContatos.add(usuario);
+                    }
 
                 }
                 adapterContatos.notifyDataSetChanged();

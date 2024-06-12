@@ -8,21 +8,20 @@ import java.io.Serializable;
 
 public class Status implements Serializable {
     private String idRemetente;
-    private String textoStatus,imagemStatus;
+    private String textoStatus, imagemStatus;
     private Usuario usuarioStatus;
     private long horaPostagem;
     private int codiCorStatus;
 
 
-
     public Status() {
     }
 
-    public void salvarStatus(Usuario usuario){
+    public void salvarStatus(Usuario usuario) {
         DatabaseReference databaseReference = firebase.databaseInstance();
-        if(usuario.getEmail().equals(firebase.recuperar_emailUsuario())) {
+        if (usuario.getEmail().equals(firebase.recuperar_emailUsuario())) {
             databaseReference.child("Status").child(idRemetente).child("MeuStatus").setValue(this);
-        }else {
+        } else {
             databaseReference.child("Status").child(Base64Custon.criptografar(usuario.getEmail())).child("OutrosStatus").child(idRemetente).setValue(this);
 
         }

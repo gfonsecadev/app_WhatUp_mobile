@@ -20,22 +20,20 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AdapterGrupo extends RecyclerView.Adapter<AdapterGrupo.HolderGrupos> {
-    private List<Usuario> listUsuario;
-    private Context context;
-
-
+    private final List<Usuario> listUsuario;
+    private final Context context;
 
 
     public AdapterGrupo(List<Usuario> list, Context c) {
-        this.context=c;
-        this.listUsuario=list;
+        this.context = c;
+        this.listUsuario = list;
 
     }
 
     @NonNull
     @Override
     public HolderGrupos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View layout= LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview,parent,false);
+        View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview, parent, false);
 
 
         return new HolderGrupos(layout);
@@ -43,21 +41,15 @@ public class AdapterGrupo extends RecyclerView.Adapter<AdapterGrupo.HolderGrupos
 
     @Override
     public void onBindViewHolder(@NonNull HolderGrupos holder, int position) {
-        Usuario usuario=listUsuario.get(position);
+        Usuario usuario = listUsuario.get(position);
         holder.email.setText(usuario.getEmail());
         holder.nome.setText(usuario.getNome());
 
-        if(!usuario.getFoto().equals("")){
+        if (!usuario.getFoto().equals("")) {
             Glide.with(context).load(Uri.parse(usuario.getFoto())).into(holder.circleImageView);
+        } else {
+            holder.circleImageView.setImageResource(R.drawable.padrao);
         }
-           else{ holder.circleImageView.setImageResource(R.drawable.padrao);
-        }
-
-
-
-
-
-
 
 
     }
@@ -69,19 +61,19 @@ public class AdapterGrupo extends RecyclerView.Adapter<AdapterGrupo.HolderGrupos
 
     public class HolderGrupos extends RecyclerView.ViewHolder {
         public CircleImageView circleImageView;
-        public  CircleImageView circleImageViewFeito;
+        public CircleImageView circleImageViewFeito;
         public LinearLayout linearLayout;
 
-        public TextView nome,email;
+        public TextView nome, email;
 
 
         public HolderGrupos(@NonNull View itemView) {
             super(itemView);
-            circleImageView=itemView.findViewById(R.id.imagem_contatoR);
-            nome=itemView.findViewById(R.id.textNomeR);
-            email=itemView.findViewById(R.id.textEmailR);
-           circleImageViewFeito=itemView.findViewById(R.id.feito);
-           linearLayout=itemView.findViewById(R.id.layoutContatos);
+            circleImageView = itemView.findViewById(R.id.imagem_contatoR);
+            nome = itemView.findViewById(R.id.textNomeR);
+            email = itemView.findViewById(R.id.textEmailR);
+            circleImageViewFeito = itemView.findViewById(R.id.feito);
+            linearLayout = itemView.findViewById(R.id.layoutContatos);
         }
     }
 }

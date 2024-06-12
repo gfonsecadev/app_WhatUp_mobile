@@ -9,15 +9,13 @@ import java.io.Serializable;
 
 
 public class Usuario implements Serializable {
-    private String nome,email,senha,foto="";
+    private String nome, email, senha, foto = "";
 
 
-    public void salvarUsuarioFirebase(){
-        DatabaseReference databaseReference= firebase.databaseInstance();
+    public void salvarUsuarioFirebase() {
+        DatabaseReference databaseReference = firebase.databaseInstance();
         databaseReference.child("Usuarios").child(Base64Custon.criptografar(email)).setValue(this);
     }
-
-
 
 
     public String getNome() {
@@ -27,6 +25,7 @@ public class Usuario implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public String getEmail() {
         return email;
     }
@@ -34,6 +33,7 @@ public class Usuario implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
     @Exclude
     public String getSenha() {
         return senha;
@@ -42,7 +42,6 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
 
 
     public String getFoto() {

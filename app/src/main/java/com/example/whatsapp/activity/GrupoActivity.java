@@ -1,16 +1,15 @@
 package com.example.whatsapp.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.view.View;
-import android.widget.AdapterView;
 
 import com.example.whatsapp.R;
 import com.example.whatsapp.entidades.Usuario;
@@ -23,7 +22,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,43 +30,40 @@ import java.util.List;
 public class GrupoActivity extends AppCompatActivity {
     private RecyclerView recyclerGrupo;
     private RecyclerView recyclerGrupoSelecionado;
-    private List<Usuario> listGrupo=new ArrayList<>();
-    private List<Usuario> listGrupoReserva=new ArrayList<>();
-    private List<Usuario> listGrupoSelecionado=new ArrayList<>();
+    private List<Usuario> listGrupo = new ArrayList<>();
+    private final List<Usuario> listGrupoReserva = new ArrayList<>();
+    private final List<Usuario> listGrupoSelecionado = new ArrayList<>();
     private Toolbar toolbar;
     private ValueEventListener eventListener;
     private DatabaseReference usuarioRef;
     private AdapterGrupo adapterGrupo;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo);
-        recyclerGrupo=findViewById(R.id.recyclerGrupoContatos);
-        recyclerGrupoSelecionado=findViewById(R.id.recyclerGrupoSelecionados);
-        toolbar=findViewById(R.id.toolbarGrupos);
+        recyclerGrupo = findViewById(R.id.recyclerGrupoContatos);
+        recyclerGrupoSelecionado = findViewById(R.id.recyclerGrupoSelecionados);
+        toolbar = findViewById(R.id.toolbarGrupos);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if(getIntent().getExtras()!=null){
-            listGrupo= (List<Usuario>) getIntent().getSerializableExtra("usuario");
+        if (getIntent().getExtras() != null) {
+            listGrupo = (List<Usuario>) getIntent().getSerializableExtra("usuario");
 
-        }else ListContatos();
+        } else ListContatos();
 
-            adapterGrupo=new AdapterGrupo(listGrupo,getApplicationContext());
+        adapterGrupo = new AdapterGrupo(listGrupo, getApplicationContext());
 
-            AdapterGrupoSelecionado adapterGrupoSelecionado=new AdapterGrupoSelecionado(listGrupoSelecionado,getApplicationContext());
-            RecyclerView.LayoutManager layoutManager1=new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-            recyclerGrupoSelecionado.setLayoutManager(layoutManager1);
-            recyclerGrupoSelecionado.setHasFixedSize(true);
-            recyclerGrupoSelecionado.setAdapter(adapterGrupoSelecionado);
+        AdapterGrupoSelecionado adapterGrupoSelecionado = new AdapterGrupoSelecionado(listGrupoSelecionado, getApplicationContext());
+        RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerGrupoSelecionado.setLayoutManager(layoutManager1);
+        recyclerGrupoSelecionado.setHasFixedSize(true);
+        recyclerGrupoSelecionado.setAdapter(adapterGrupoSelecionado);
 
 
-
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerGrupo.setLayoutManager(layoutManager);
         recyclerGrupo.setHasFixedSize(true);
         recyclerGrupo.setAdapter(adapterGrupo);
@@ -76,7 +71,7 @@ public class GrupoActivity extends AppCompatActivity {
         recyclerGrupoSelecionado.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerGrupo, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Usuario usuarioSelecionado=listGrupoSelecionado.get(position);
+                Usuario usuarioSelecionado = listGrupoSelecionado.get(position);
                 listGrupoSelecionado.remove(usuarioSelecionado);
                 listGrupo.add(usuarioSelecionado);
                 adapterGrupoSelecionado.notifyDataSetChanged();
@@ -99,7 +94,7 @@ public class GrupoActivity extends AppCompatActivity {
         recyclerGrupo.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerGrupo, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Usuario usuarioSelecionado=listGrupo.get(position);
+                Usuario usuarioSelecionado = listGrupo.get(position);
                 listGrupo.remove(usuarioSelecionado);
                 listGrupoSelecionado.add(usuarioSelecionado);
                 adapterGrupoSelecionado.notifyDataSetChanged();
@@ -121,40 +116,38 @@ public class GrupoActivity extends AppCompatActivity {
         }));
 
 
-
     }
 
 
+    public void toolbar() {
+        int selecionado = listGrupoSelecionado.size();
+        int totalGrupo = listGrupo.size() + selecionado;
 
-    public void toolbar(){
-        int selecionado=listGrupoSelecionado.size();
-        int totalGrupo=listGrupo.size()+selecionado;
-
-        toolbar.setSubtitle("Selecionado: " +selecionado+ " de "+totalGrupo);
+        toolbar.setSubtitle("Selecionado: " + selecionado + " de " + totalGrupo);
 
     }
 
-    public void SelecionarGrupo(View view){
-        Intent intent =new Intent(this,GrupoSelecionadoActivity.class   );
+    public void SelecionarGrupo(View view) {
+        Intent intent = new Intent(this, GrupoSelecionadoActivity.class);
         intent.putExtra("usuario", (Serializable) listGrupoSelecionado);
         startActivity(intent);
         finish();
 
     }
 
-    public void ListContatos(){
-        DatabaseReference databaseReference= firebase.databaseInstance();
-        usuarioRef=databaseReference.child("Usuarios");
+    public void ListContatos() {
+        DatabaseReference databaseReference = firebase.databaseInstance();
+        usuarioRef = databaseReference.child("Usuarios");
 
-        eventListener= usuarioRef.addValueEventListener(new ValueEventListener() {
+        eventListener = usuarioRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                for (DataSnapshot dados:snapshot.getChildren()) {
-                    Usuario usuario=dados.getValue(Usuario.class);
+                for (DataSnapshot dados : snapshot.getChildren()) {
+                    Usuario usuario = dados.getValue(Usuario.class);
 
-                    if(!firebase.recuperar_emailUsuario().equals(usuario.getEmail())) {
+                    if (!firebase.recuperar_emailUsuario().equals(usuario.getEmail())) {
 
                         listGrupo.add(usuario);
                     }
@@ -171,14 +164,12 @@ public class GrupoActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if(getIntent().getExtras()==null){
+        if (getIntent().getExtras() == null) {
             usuarioRef.removeEventListener(eventListener);
         }
 
